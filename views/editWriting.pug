@@ -1,1 +1,9 @@
-p edit writing
+extends layouts/main.pug
+
+block content
+    .form-container
+        form(action=`/writing${routes.editWriting}`, method="post")
+            input(type="text", placeholder ="제목",name="title")
+            textarea(name="writing",placeholder="글을 입력하세요")
+            input(type="submit", value="게시물 수정")
+        a.form-container__link(href=`/writing${routes.deleteWriting}`) 게시물 삭제

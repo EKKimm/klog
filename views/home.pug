@@ -1,11 +1,7 @@
 extends layouts/main.pug
 
 block content
-    .profile__container
-        h3.profile__img profile image
-        h3.profile__name profile name
-    .writing__container
-        h2.writing__title writing title
-        h3.writing__content writing content
-    .main-images__container
-        h3 main images
+    .writings
+        each item in writings
+            h1= item.title
+            p= item.writing

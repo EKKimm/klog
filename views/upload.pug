@@ -1,1 +1,10 @@
-p Upload
+extends layouts/main.pug
+
+block content
+    .form-container
+        form(action=`/writing${routes.upload}`, method="post")
+            label(for="file") 이미지 파일
+            input(type="file", id="file",name="file")
+            input(type="text", placeholder="제목", name="title")
+            textarea(name="writing", placeholder="글을 입력하세요")
+            input(type="submit", value="게시물 올리기")
