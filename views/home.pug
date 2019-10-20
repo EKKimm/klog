@@ -1,7 +1,14 @@
 extends layouts/main.pug
+include mixins/writingBlock.pug
 
 block content
     .writings
         each item in writings
-            h1= item.title
-            p= item.writing
+            +writingBlock({
+                title: item.title,
+                mainText: item.mainText,
+                author: item.creator.name,
+                views: item.views,
+                pictureFile: item.pictureFile,
+                id: item.id
+            })

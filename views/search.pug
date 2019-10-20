@@ -1,5 +1,15 @@
 extends layouts/main.pug
+include mixins/writingBlock.pug
 
 block content
     .search__header
-        span #{searchingBy}에 대한 검색결과 입니다. #{searchingNumber}건
+        h3 #{searchingBy}에 대한 검색결과 입니다. #{searchingNumber}건
+    .search__writings
+        each item in writings
+            +writingBlock({
+                title: item.title,
+                mainText: item.mainText,
+                author: item.creator.name,
+                views: item.views,
+                pictureFile: item.pictureFile
+            })

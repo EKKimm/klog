@@ -1,0 +1,9 @@
+mixin writingBlock(writing = {})
+    .writingBlock
+        a(href=routes.writingDetail(writing.id))
+            h6.writingBlock__author=writing.author
+            h4.writingBlock__title=writing.title
+            h5.writingBlock__mainText=writing.mainText
+            h6.writingBlock__views=writing.views
+            img.writingBlock__thumbnail(src=writing.pictureFile)
+            

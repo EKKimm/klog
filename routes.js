@@ -25,12 +25,24 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userDetail: USER_DETAIL,
+  userDetail: id => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL;
+    }
+  },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   writing: WRITING,
   upload: UPLOAD,
-  writingDetail: WRITING_DETAIL,
+  writingDetail: id => {
+    if (id) {
+      return `/writing/${id}`;
+    } else {
+      return WRITING_DETAIL;
+    }
+  },
   editWriting: EDIT_WRITING,
   deleteWriting: DELETE_WRITING
 };
